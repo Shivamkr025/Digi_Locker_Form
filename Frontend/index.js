@@ -4,7 +4,7 @@ document.getElementById('aadhaarForm').addEventListener('submit', async function
     const mobileNumber = document.getElementById('mobileNumber').value; 
 
     try {
-        const aadhaarResponse = await fetch('http://localhost:7155/fetch/aadhaar', {
+        const aadhaarResponse = await fetch('https://digi-locker-form-2.onrender.com/fetch/aadhaar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ document.getElementById('aadhaarForm').addEventListener('submit', async function
             alert('Auto Approved Aadhaar!')
 
         } else {
-            const idCardResponse = await fetch('http://localhost:7155/validate/Idcard', {
+            const idCardResponse = await fetch('https://digi-locker-form-2.onrender.com/validate/Idcard', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
