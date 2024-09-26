@@ -16,7 +16,9 @@ app.use(express.json())
 app.use('/' , aadhaarFile)
 app.use('/' , workflowFile)
 
-mongoose.connect('mongodb://localhost:27017/Digilocker')
+const ConnectDB = "mongodb+srv://shivam22:shivam22@shivam.n1mrvon.mongodb.net/Digilocker?retryWrites=true&w=majority&appName=shivam"
+
+mongoose.connect(ConnectDB)
     .then(() => {
         console.log("connecting successfully...");
     }).catch((error) => {

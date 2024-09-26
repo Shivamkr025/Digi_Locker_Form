@@ -21,6 +21,16 @@ const insertAadhaar = async(req , res) => {
     }
 }
 
+const getAadhaar = async(req, res) => {
+    try {
+        const getData = await Aadhaar.find({})
+        res.status(200).json({getData})
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({err: "something wrong..."})       
+    }
+}
+
 const insertIDCard = async (req, res) => {
     const { idNumber } = req.body;
 
@@ -42,5 +52,14 @@ const insertIDCard = async (req, res) => {
     }
 };
 
+const getIDCard = async(req, res) => {
+    try {
+        const getData = await IDCard.find({})
+        res.status(200).json({getData})
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({err: "something wrong..."})       
+    }
+}
 
-export {insertAadhaar , insertIDCard}
+export {insertAadhaar , insertIDCard , getAadhaar , getIDCard}
